@@ -38,7 +38,8 @@ jobs:
 
       - name: Build Android App
         run: |
-          cd android ./gradlew assembleDebug --no-daemon
+          cd android 
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
