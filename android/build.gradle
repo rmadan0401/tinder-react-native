@@ -19,10 +19,9 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
         google()
-        jcenter()
-        // Look in node_modules for React Native artifacts
+        mavenCentral()
+        // Point to node_modules/react-native/android (adjust the path if necessary)
         maven { url "$rootDir/../node_modules/react-native/android" }
         maven { url "https://www.jitpack.io" }
     }
