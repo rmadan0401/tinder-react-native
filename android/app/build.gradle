@@ -1,5 +1,3 @@
-// android/app/build.gradle
-
 apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
@@ -45,12 +43,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     testImplementation 'junit:junit:4.12'
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    // Use a fixed version and mark as compileOnly to avoid resolution errors.
+    // Use compileOnly for React Native to avoid external resolution errors.
     compileOnly "com.facebook.react:react-native:0.70.6"
 }
-
-// Task to copy downloadable dependencies (if needed)
-// task copyDownloadableDepsToLibs(type: Copy) {
-//     from configurations.compile
-//     into 'libs'
-// }
