@@ -1,5 +1,3 @@
-// android/build.gradle
-
 buildscript {
     ext {
         buildToolsVersion = "28.0.3"
@@ -21,8 +19,11 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        // Point to node_modules/react-native/android (adjust the path if necessary)
-        maven { url "$rootDir/../node_modules/react-native/android" }
+        // Use flatDir to search for React Native artifacts in the local node_modules folder.
+        flatDir {
+            dirs "$rootDir/../node_modules/react-native/android"
+        }
+        // Fallback repository (if needed)
         maven { url "https://www.jitpack.io" }
     }
 }
