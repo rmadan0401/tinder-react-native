@@ -43,6 +43,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     testImplementation 'junit:junit:4.12'
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    // Use compileOnly for React Native to avoid external resolution errors.
+    // Mark React Native as compileOnly so Gradle does not try to resolve it externally.
     compileOnly "com.facebook.react:react-native:0.70.6"
 }
